@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    {{>headContent}}
+
+</head>
+
+<body onresize="resize()">
+
+    {{>navbar}}
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm" id="player_0_name">
+
+                <div class="playerInfo">
+                <div class="media">
+                        <img class="mr-3" src="./img/gofish/avatars/caocao.jpeg" alt="Caocao">
+                        <div class="media-body">
+                                <h4 class="mt-0">曹操</h4>
+                                <p class='scoreBoard'></p>
+
+                        </div>
+                </div>
+
+                <div id="player0"></div>
+                </div>
+
+            </div>
+
+            <div class="col-sm" id="player_1_name">
+
+                    <div class="playerInfo">
+
+                    <div class="media">
+                            <img class="mr-3" src="./img/gofish/avatars/liubei.jpg" alt="Liu Bei">
+                            <div class="media-body">
+                                    <h4 class="mt-0">刘备</h4>
+                                    <p class='scoreBoard'></p>
+    
+                            </div>
+                    </div>
+
+                    <div id="player1"></div>
+
+                    </div>
+
+            </div>
+
+            <div class="col-sm" id="player_2_name">
+
+                    <div class="playerInfo">
+
+                    <div class="media">
+                            <img class="mr-3" src="./img/gofish/avatars/sunquan.jpg" alt="Sun Quan">
+                            <div class="media-body">
+                                    <h4 class="mt-0">孙权</h4>
+                                    <p class='scoreBoard'></p>
+    
+                            </div>
+                    </div>
+
+                    <div id="player2"></div>
+
+                    </div>
+            </div>
+
+        </div>
+    
+        <div class="row">
+
+            <div class="col-sm">
+
+                    <div id="console">
+                        <p id="console2" style="margin-bottom: 0rem"></p>
+                    </div>
+            
+            </div>
+
+            <div class="col-sm" id="outerDiv">
+
+                <div class="input-group mb-3">
+
+                    <input type="text" autocomplete="off" class="form-control" placeholder="Осталось карт:" disabled>
+
+                    <div class="input-group-append">
+                            <span class="input-group-text" id="numberOfCards">36</span>
+                    </div>
+
+                </div>
+
+                
+                <div id='startDeck'></div>
+    
+            </div>
+
+            <div class="col-sm">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="playerName">问谁</span>
+                    </div>
+                    <input type="text" id="guessInput"  autocomplete="off" class="form-control" placeholder="简体字" >
+                    <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="button" id="fireButton" onclick="handleFireButton();">问</button>
+                        </span>
+                </div>
+
+                <div class="notes">
+
+                    <!-- Button reminder modal -->
+
+                    <button class="btn btn-outline-secondary" id="replay" onclick="replayClick()"><i class="fas fa-sync-alt"></i></button>
+                    <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#howToPlayModal" id="howToPlay"><i class="fas fa-question"></i></button>
+                    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#reminderModal" id="reminderButtonTip"><i class="fas fa-book"></i></button>
+                    <button class="btn btn-outline-secondary" id="imgSpeech" onclick="startDictation();"><i class="fas fa-microphone-alt"></i></button>
+
+                    <!-- Modals -->
+                    <div class="modal fade" id="reminderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Глоссарий</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                <div class="modal-body">
+                                        <div id="reminder">
+                                                <table class="table-hover">
+                                                        <thead>
+                                                                <tr>
+                                                                    <th></th>
+                                                                    <th>汉字</th>
+                                                                    <th>拼音</th>
+                                                                    <th>量词</th>
+                                                                    <th>拼音</th>
+
+                                                                </tr>
+                                                        </thead>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+
+                                                        </tr>
+                                                    </table>
+
+                                        </div>				
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- How to Play Modal -->
+                    <div class="modal fade" id="howToPlayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Как Играть</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                        <h5>Описание</h5>
+                                        <p>Игра - сундучки или Go Fish. В игре 13 разных наборов карт, состоящих из 4 одинаковых, то есть всего карт 52</p>
+                                        
+                                        <h5>Цель</h5>
+                                        <p>Собрать как можно больше полных наборов (4 лошадки, 4 рыбки и т.п.). У кого больше наборов к концу игры, то и выиграл</p>
+                                        
+                                        <h5>Правила</h5>
+                                        <ul>
+                                            <li>Вопрос <span class="quotes">У тебя есть ..?</span> может быть вида <span class="quotes">你有{объект}吗</span> или <span class="quotes">你有没有{объект}</span></li>
+                                            <li>Если у игрока есть объект, то нужно угадать его кол-во фразой <span class="quotes">我猜你有{кол-во}{счетн. слово}</span> или просто <span class="quotes">你有{кол-во}{счетн. слово}</span></li>
+                                            <li>Знаки вопроса ставить необязательно</li>
+                                            <li>Если вы получаете отрицательный ответ, то ход переходит следующему игроку</li>
+                                            <li>Для голосового ввода нажмите Пробел и произнесите фразу</li>
+
+                                        </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END of modals -->
+
+                </div>
+
+            </div>
+
+        </div>
+    
+        <div class="row">
+            <div class="col-12">
+
+                <div class="playerInfo">
+
+                    <h4 class="mt-0">客官</h4>
+                    <p class='scoreBoard'></p>
+                    <div id="player3">2</div>
+                </div>
+
+            </div>
+        </div>
+    
+        <!-- GAME OVER MODAL -->
+        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Гамовер!</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="gameOver">
+                            <table>
+                                <tr>
+                                    <td><h4>曹操：</h4></td>
+                                    <td class="scoreBoard"></td>
+                                </tr>
+                                <tr>
+                                    <td><h4>刘备：</h4></td>
+                                    <td class="scoreBoard"></td>
+                                </tr>
+                                <tr>
+                                    <td><h4>孙权：</h4></td>
+                                    <td class="scoreBoard"></td>
+                                </tr>
+                                <tr>
+                                    <td><h4>客官：</h4></td>
+                                    <td class="scoreBoard"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- END OF GAME OVER MODAL -->
+        
+    </div>
+    
+    {{>footer}}
+    
+    
+    <!-- Tippy tooltips -->
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/gsap.min.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="js/gofish.js"></script>
+    <script src="js/resize.js?v=3"></script>
+    <script src="js/dictation.js?v=3"></script>
+
+
+    <!-- Tipsy Tooltips -->
+    <script>
+            
+        // tooltips for players names
+        let names = document.getElementsByClassName('mt-0')
+
+        for (let i = 0; i < names.length; i++) {
+            tippy(names[i], {
+            content: '<div class="pinyin">'+ model.players[i].pinyin + '</div><div>'+ model.players[i].description + '</div>',
+            theme: 'light-border',
+            placement: 'bottom'
+        });
+        }
+
+        // for chinese words in the reminder
+
+        const translation = [ {},
+            {pinyin: 'hàn zì', description: 'китайские иероглифы'},
+            {pinyin: 'pīn yīn', description: 'пиньинь'},
+            {pinyin: 'liàng cí', description: 'счетные слова'},
+            {pinyin: 'pīn yīn', description: 'пиньинь'}
+        ]
+
+        let words = document.getElementById('reminder').getElementsByTagName('th')
+
+        for (let i = 1; i < words.length; i++) {
+            tippy(words[i], {
+                content: '<div class="pinyin">'+ translation[i].pinyin + '</div><div>'+ translation[i].description + '</div>',
+                theme: 'light-border',
+                placement: 'bottom'
+            })
+        }
+
+        tippy('#imgSpeech', {
+            content: 'Ввод Голосом | Пробел',
+            theme: 'tomato',
+            placement: 'bottom'
+        })
+
+        
+        tippy('#howToPlay', {
+            content: 'Как Играть',
+            theme: 'tomato',
+            placement: 'bottom'
+        })
+
+
+        replay
+
+        tippy('#replay', {
+            content: 'Начать Заново',
+            theme: 'tomato',
+            placement: 'bottom'
+        })
+
+        tippy('#reminderButtonTip', {
+            content: 'Глоссарий',
+            theme: 'tomato',
+            placement: 'bottom'
+        })
+
+    </script>
+
+</body>
+
+</html>

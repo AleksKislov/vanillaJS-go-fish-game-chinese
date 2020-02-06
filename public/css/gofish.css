@@ -1,0 +1,282 @@
+.scoreBoard img {
+	height: 21px;
+	margin-left: 3px;
+}
+
+.scoreBoard {
+	height: 21px;
+	padding-bottom: 10px;
+}
+
+.playersCards {
+	border-style: solid;
+	padding: 22px 6px;
+	margin: 6px;
+	border-radius: .5rem;
+	width: 70px;
+	background-color: white;
+}
+
+.playerInfo {
+	padding: 16px;
+	text-align: center;
+	border: 1px solid #ccc!important;
+	border-radius: .25rem;
+
+}
+
+#fireButton {
+	border-radius: 0  .25rem .25rem 0;
+}
+
+#player3 {
+	text-align: center;
+}
+
+#startDeck {
+	margin-top: 20px;
+	padding-left: 36%;
+	height: 7rem;
+}
+
+#startDeck img {
+	display:block;
+	margin:auto;
+	height: 86px;
+}
+
+.otherPlayersCards {
+	height: 86px;
+	padding: 5px 5px;
+	margin-left: -70px;
+}
+
+#player0, #player1, #player2 {
+	padding-left: 70px
+}
+
+.playerInfo:hover {
+	background-color: rgb(196, 243, 219);
+}
+
+#console {
+	padding: 10px;
+	height:180px;
+	border:1px solid #ced4da;
+	border-radius: .25rem;
+	overflow:auto;
+	background-color: #e9ecef;
+	color: #495057;
+	display: flex; 
+	flex-direction: column-reverse;
+}
+
+#numberOfCards {
+	color: white;
+	font-weight: bold;
+	background-color: #6c757d;
+	border-color: #6c757d;
+}
+
+.deckInfo {
+	border: 1px solid #ccc!important;
+	border-radius: .25rem;
+	padding: 4px;
+	text-align: center;
+}
+
+.otherPlayersCardsFromOthers {
+	border-style: solid;
+	padding: 18px 6px;
+	margin: 6px;
+	border-radius: 10px;
+	height: 78px;
+}
+
+.mr-3 {
+	height: 80px;
+	border-radius: 1ex;
+	margin-bottom: 8px;
+	border: 1px solid #ccc;
+
+}
+
+.row {
+	margin: 30px 0px;
+}
+
+
+/* REMINDERS */
+
+.quotes {
+	color: #6c2087;
+}
+
+.modal-body {
+	text-align: left;
+}
+
+.notes {
+	text-align: center;
+}
+
+.notes button {
+	margin: 0.2rem;
+	width: 3rem;
+}
+
+#reminder table {
+	width: 100%;
+}
+
+#reminder img {
+	height: 32px;
+	margin: 3px;
+}
+
+#reminder td {
+	text-align: center;
+} 
+
+#reminder th {
+	text-align: center;
+} 
+
+#inputWidth {
+	width: 100%
+}
+
+.pinyin {
+	font-size: 20px;
+	color: rgb(62, 18, 182)
+}
+
+
+.drawCardAnimation {
+	position: absolute;
+	z-index: 1000;
+}
+
+.drawCardAnimationZero {
+	position: absolute;
+	z-index: 1000;
+}
+
+.whiteBack {
+	background-color: white;
+}
+
+fieldset {
+	width: 100%;
+}
+
+.tippy-tooltip.tomato-theme {
+	background-color:#6c757d;
+}
+
+.tippy-tooltip.tomato-theme[data-placement^='bottom'] .tippy-arrow {
+	border-bottom-color: #6c757d;
+  }
+
+#playerName {
+	background-color: #e9ecef;
+	color: #495057;
+}
+
+.transTip:hover {
+	background-color: darkcyan;
+	color:white;
+	border-radius: .25rem;
+	padding: .25rem;
+}
+
+footer {
+	margin-top: 5rem;
+	width:100%;
+	display: flex;
+	flex-direction: column;
+}
+
+footer p {
+	text-align: center;
+	color: white;
+	margin: 1rem;
+}
+
+footer a {
+	color: white;
+}
+
+/* FOOTER ANIMATION */
+
+#waves {
+	position: fixed;
+	bottom: 0;
+	height: 1rem;
+	width: 100%;
+	background: url(../img/footer/water.png);
+	background-repeat: repeat-x;
+	background-size: 10%;
+	margin-bottom: 3.5rem;
+}
+
+.waves {
+	position: fixed;
+	bottom: 0;
+	height: 1rem;
+	width: 100%;
+	background: url(../img/footer/water.png);
+	background-repeat: repeat-x;
+	background-size: 10%;
+	margin-bottom: 3.7rem;
+	animation: float 2.6s infinite; 
+}
+
+#water {
+	position: fixed;
+	bottom: 0;
+	height: 3.5rem;
+	width: 100%;
+	background-color: #67B9CE;
+}
+
+#warship {
+	transform: scaleX(-1);
+	position: fixed;
+	bottom: 0;
+	height: 4.7rem;
+	width: 100%;
+	background: url(../img/footer/warship-no-water.png);
+	background-repeat: no-repeat;
+	background-size: 5%;
+	margin-bottom: 3.4rem;
+	animation: sail 120s infinite; 
+}
+
+.floatClass {
+	transform: scaleX(-1);
+	position: fixed;
+	bottom: 0;
+	height: 4.7rem;
+	width: 100%;
+	animation: float 2s infinite; 
+}
+
+
+@keyframes sail {
+	from {
+		right: -70px;
+	}
+	to {
+		right: 100%;
+	}
+}
+
+@keyframes float {
+	0%, 100% {
+		transform: translateX(2px);
+	}
+	50% {
+		transform: translateY(5px);
+	}
+}
