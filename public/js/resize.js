@@ -23,3 +23,5 @@ function resize() {
   footerP.style.margin = "" + (coef * 1) + "rem"
 
 }
+
+window.addEventListener('load', resize)

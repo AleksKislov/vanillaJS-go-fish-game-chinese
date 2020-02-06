@@ -494,8 +494,6 @@ function init() {
     view.initPlayers();
     view.initStartDeck();
     view.displayReminder();
-
-    resize();
 }
 
 function replayClick() {
