@@ -580,8 +580,15 @@ function parseQuant(quantity) {
             return null;
         }
 
-        quantityInt = (model.chineseNumbers.indexOf(quantity) + 1);
-        return quantityInt; 
+        if(quantity === '1' || quantity === '2' || quantity === '3') {
+            return parseInt(quantity);
+        } else if (quantity === '一' || quantity === '两' || quantity === '三') {
+            quantityInt = (model.chineseNumbers.indexOf(quantity) + 1);
+            return quantityInt; 
+        } else {
+            return null;
+        }
+
     }
 }
 
